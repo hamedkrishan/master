@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('components.home.home');
+    return view('OurTeam.ourteam');
 });
