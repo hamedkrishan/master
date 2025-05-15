@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PackageController;
+
+Route::resource('packages', PackageController::class);
+
 
 // Home
 Route::get('/', function () {
@@ -30,9 +34,12 @@ Route::get('/Our Team', function () {
     return view('main_components.OurTeam.ourteam');
 });
 
+Route::get('/Manegpacks', [PackageController::class , 'index'])->name('Manegpacks');
+
 // Appointment
 Route::get('/Appoinment', function () {
-    return view('main_components.appointment.appointment');
+    $packages = App\Models\Package::all(); // Fetch all packages from the database
+    return view('main_components.appointment.appointment', compact('packages')); // Pass the packages to the view
 });
 
 // Custom Login Page View
@@ -44,6 +51,10 @@ Route::get('/Log', function () {
 Route::get('/Register', function () {
     return view('main_components.register');
 });
+
+// Request Package (Route to show package details)
+Route::get('request-package/{id}', [PackageController::class, 'show'])->name('request-package');
+
 
 // Auth Controllers
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -58,11 +69,17 @@ Route::post('/logout', function () {
 })->name('logout');
 
 // Super Admin Dashboard
-Route::get('/admin/admin_dash', function () {
+Route::get('/admin', function () {
     return view('admin.admin_dash');
 })->middleware('auth');
+Route::get('/request-package/{id}', [PackageController::class, 'show'])->name('request-package');
+Route::get('/packages/{id}', [PackageController::class, 'show'])->name('packages.show');
 
-// Admin Dashboard
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard'); // create this view if needed
-})->middleware('auth');
+
+Route::get('/packages', [PackageController::class, 'index'])->name('packages.index');
+
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('packages', PackageController::class);
+});

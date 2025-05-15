@@ -1,7 +1,3 @@
-
-
-
-
 @include('layouts.top')
 @include('layouts.nav')
 

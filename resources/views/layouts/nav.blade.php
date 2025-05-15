@@ -64,6 +64,8 @@
                         <div class="dropdown-menu bg-light m-0">
                             <a href="{{ url('/Our Team') }}" class="dropdown-item">Our Team</a>
                             <a href="{{ url('/Appoinment') }}" class="dropdown-item">Appoinment</a>
+                            <a href={{ route('Manegpacks') }} class="dropdown-item">Manegpacks</a>
+
                         </div>
                     </div>
                     <a href="{{ url('/Contact') }}" class="nav-item nav-link">Contact</a>

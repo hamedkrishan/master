@@ -40,9 +40,9 @@ class LoginController extends Controller
 
         switch ($user->role) {
             case 'super_admin':
-                return redirect('/admin/admin_dash');
+                return redirect('/admin');
             case 'admin':
-                return redirect('/admin/dashboard');
+                return redirect('/admin');
             default:
                 return redirect('/');
         }

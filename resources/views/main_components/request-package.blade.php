@@ -5,9 +5,10 @@
 <div class="container-fluid py-5" style="background-color: #f8f9fa;">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="display-6 mb-3">kgjh</h1>
-            <p>ljndnv</p>
-            <p class="text-success fw-bold mb-4"> 50</p>
+            <h1 class="display-6 mb-3">{{ $package->name }}</h1>
+            <p>{{ $package->description }}</p>
+            <p>{{ $package->details }}</p>
+            <p class="text-success fw-bold mb-4">{{ $package->price }} JOD</p>
         </div>
 
         <form action="" method="POST">
@@ -32,5 +33,8 @@
         </form>
     </div>
 </div>
+
+
+
 
 @endsection
