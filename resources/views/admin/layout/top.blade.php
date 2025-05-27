@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('vendors/feather/feather.css') }}">
   <link rel="stylesheet" href="{{ asset('vendors/ti-icons/css/themify-icons.css') }}">
   <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- End plugin css for this page -->
 
@@ -26,6 +27,7 @@
   <!-- endinject -->
 
   <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
+  
 </head>
 
 <body>

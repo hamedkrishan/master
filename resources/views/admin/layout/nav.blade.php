@@ -1,3 +1,6 @@
+
+
+
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row bg-white shadow-sm">
   <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
     <a class="navbar-brand brand-logo mr-5" href="/admin"><img src="images/logo.svg" class="mr-2" alt="logo" /></a>
@@ -27,17 +30,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
           <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <div class="preview-icon bg-success">
-                <i class="ti-info-alt mx-0"></i>
-              </div>
-            </div>
-            <div class="preview-item-content">
-              <h6 class="preview-subject font-weight-normal">Application Error</h6>
-              <p class="font-weight-light small-text mb-0 text-muted">Just now</p>
-            </div>
-          </a>
+          
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
               <div class="preview-icon bg-warning">
@@ -85,49 +78,3 @@
   </div>
 </nav>
 
-<!-- Sidebar -->
-<nav class="sidebar sidebar-offcanvas bg-light position-fixed" id="sidebar" style="top: 70px; width: 250px; height: 100vh;">
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="/admin">
-      <i class="icon-grid menu-icon text-dark"></i>
-      <span class="menu-title">Dashboard</span>
-    </a>
-  </div>
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="{{ route('packages.index') }}">
-      <i class="icon-paper menu-icon text-dark"></i>
-      <span class="menu-title">Packages</span>
-    </a>
-  </div>
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="{{ route('packages.create') }}">
-      <i class="icon-columns menu-icon text-dark"></i>
-      <span class="menu-title">Add Package</span>
-    </a>
-  </div>
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="#charts">
-      <i class="icon-bar-graph menu-icon text-dark"></i>
-      <span class="menu-title">Charts</span>
-    </a>
-  </div>
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="#tables">
-      <i class="icon-grid-2 menu-icon text-dark"></i>
-      <span class="menu-title">Tables</span>
-    </a>
-  </div>
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="#icons">
-      <i class="icon-contract menu-icon text-dark"></i>
-      <span class="menu-title">Icons</span>
-    </a>
-  </div>
-  <div class="nav-item">
-    <a class="nav-link text-dark" href="#auth">
-      <i class="icon-head menu-icon text-dark"></i>
-      <span class="menu-title">User Pages</span>
-    </a>
-  </div>
-</nav>
-<main class="container-fluid" style="margin-top: 80px; margin-left: 100px;">

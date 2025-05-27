@@ -23,20 +23,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <a href="{{ url('/') }}" class="h1 text-white mb-0 mx-auto">Center<span class="text-dark">Lab</span></a>
             <div class="d-flex align-items-center gap-2">
-                {{-- @guest
-                    <a href="{{ url('/Log') }}" class="btn btn-light btn-sm px-3 py-1 rounded-pill d-flex align-items-center justify-content-center">
-                        <i class="bi bi-box-arrow-in-right"></i> <!-- Login Icon -->
-                    </a>
-                @endguest
-
-                @auth
-                    <form method="POST" action="{{ route('logout') }}" class="mb-0">
-                        @csrf
-                        <button type="submit" class="btn btn-danger btn-sm px-3 py-1 rounded-pill d-flex align-items-center justify-content-center">
-                            <i class="bi bi-box-arrow-right"></i> <!-- Logout Icon -->
-                        </button>
-                    </form>
-                @endauth --}}
+                {{-- You can add buttons here if needed --}}
             </div>
         </div>
     </div>
@@ -63,26 +50,27 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu bg-light m-0">
                             <a href="{{ url('/Our Team') }}" class="dropdown-item">Our Team</a>
-                            <a href="{{ url('/Appoinment') }}" class="dropdown-item">Appoinment</a>
-                            <a href={{ route('Manegpacks') }} class="dropdown-item">Manegpacks</a>
-
+                            <a href="{{ url('/Appoinment') }}" class="dropdown-item">Packages</a>
+                            <a href="{{ url('/tests-view') }}" class="dropdown-item">Test</a>
                         </div>
                     </div>
                     <a href="{{ url('/Contact') }}" class="nav-item nav-link">Contact</a>
                 </div>
-                <div class="ms-auto d-none d-lg-flex">
+                <div class="ms-auto d-none d-lg-flex align-items-center">
                     @guest
                         <a href="{{ url('/Log') }}" class="btn btn-primary btn-lg px-4 py-2 rounded-pill d-flex align-items-center justify-content-center shadow-lg border-0">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> <!-- Login Icon -->
-                            
+                            <i class="bi bi-box-arrow-in-right me-2"></i> 
                         </a>
                     @endguest
 
                     @auth
-                        <form method="POST" action="{{ route('logout') }}" class="mb-0">
+                        <a href="{{ url('/profile') }}" class="btn btn-secondary btn-sm px-3 py-1 rounded-pill d-flex align-items-center justify-content-center me-2">
+                            <i class="bi bi-person-circle me-1"></i> Profile
+                        </a>
+                        <form method="POST" action="{{ route('logout') }}" class="mb-0 d-inline">
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm px-3 py-1 rounded-pill d-flex align-items-center justify-content-center">
-                                <i class="bi bi-box-arrow-right"></i> <!-- Logout Icon -->
+                                <i class="bi bi-box-arrow-right"></i>
                             </button>
                         </form>
                     @endauth

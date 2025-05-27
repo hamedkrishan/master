@@ -2,78 +2,86 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Package;
+use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
-    // عرض جميع الباكجات
+    private array $iconOptions = [
+        'bi bi-heart-pulse'      => 'Heart pulse',
+        'bi bi-capsule-pill'     => 'Capsule pill',
+        'bi bi-prescription2'    => 'Prescription',
+        'bi bi-virus'            => 'Virus',
+        'bi bi-lungs'            => 'Lungs',
+        'bi bi-clipboard2-pulse' => 'Clipboard pulse',
+        'bi bi-file-medical'     => 'Medical file',
+    ];
+
     public function index()
     {
-        $packages = Package::all();
-        return view('admin.packages.index', compact('packages'));
+        return view('admin.packages.index', [
+            'packages'    => Package::all(),
+            'iconOptions' => $this->iconOptions,
+        ]);
     }
 
-    // عرض نموذج إنشاء باكج جديد
     public function create()
     {
-        return view('admin.packages.create');
+        return view('admin.packages.create', [
+            'iconOptions' => $this->iconOptions,
+        ]);
     }
 
-    // تخزين باكج جديد
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
+        $data = $request->validate([
+            'name'        => 'required|string|max:255',
             'description' => 'nullable|string',
-            'price' => 'required|numeric',
-            'icon' => 'nullable|string',
-            'details' => 'nullable|string',
+            'price'       => 'required|numeric',
+            'details'     => 'nullable|string',
+            'icon'        => 'nullable|string|in:' . implode(',', array_keys($this->iconOptions)),
         ]);
 
-        Package::create($validated);
+        Package::create($data);
 
-        return redirect()->route('packages.index');
+        return redirect()->route('packages.index')
+                         ->with('success', 'Package created successfully.');
     }
 
-    // عرض تفاصيل باكج واحد
-    public function show($id)
+    public function show(Package $package)
     {
- $package = Package::findOrFail($id);
-    return view('main_components.request-package', compact('package'));
+        return view('main_components.request-package', compact('package'));
     }
 
-    // عرض نموذج تعديل باكج
-    public function edit($id)
+    public function edit(Package $package)
     {
-        $package = Package::findOrFail($id);
-        return view('admin.packages.edit', compact('package'));
+        return view('admin.packages.edit', [
+            'package'     => $package,
+            'iconOptions' => $this->iconOptions,
+        ]);
     }
 
-    // تحديث باكج
-    public function update(Request $request, $id)
+    public function update(Request $request, Package $package)
     {
-        $package = Package::findOrFail($id);
-
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
+        $data = $request->validate([
+            'name'        => 'required|string|max:255',
             'description' => 'nullable|string',
-            'price' => 'required|numeric',
-            'icon' => 'nullable|string',
-            'details' => 'nullable|string',
+            'price'       => 'required|numeric',
+            'details'     => 'nullable|string',
+            'icon'        => 'nullable|string|in:' . implode(',', array_keys($this->iconOptions)),
         ]);
 
-        $package->update($validated);
+        $package->update($data);
 
-        return redirect()->route('packages.index');
+        return redirect()->route('packages.index')
+                         ->with('success_edit', 'Package updated successfully.');
     }
 
-    // حذف باكج
-    public function destroy($id)
+    public function destroy(Package $package)
     {
-        $package = Package::findOrFail($id);
         $package->delete();
 
-        return redirect()->route('packages.index');
+        return redirect()->route('packages.index')
+                         ->with('success_delete', 'Package deleted successfully.');
     }
 }

@@ -1,54 +1,119 @@
 @extends('dash')
 
 @section('dash_content')
+<div class="container-fluid p-0">
+  <div class="row g-0">
+    <nav class="col-12 col-md-3 col-lg-2 bg-light position-fixed vh-100" style="top: 70px;">
+      {{-- Sidebar --}}
+    </nav>
 
-<div class="container-scroller">
-  <div class="container-fluid page-body-wrapper">
-
-
-    <div class="main-panel">
-      <div class="content-wrapper">
-
-        {{-- welcome message start --}}
+    <div class="col offset-md-3 offset-lg-2" style="margin-top: 70px;">
+      <main class="container" style="max-width: 900px;">
         <div class="row">
-          <div class="col-md-12 grid-margin">
-            <div class="row">
-              <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                <h3 class="font-weight-bold">Welcome Aamir</h3>
-                <h6 class="font-weight-normal mb-0">
-                  All systems are running smoothly! You have 
-                  <span class="text-primary">3 unread alerts!</span>
-                </h6>
+          <div class="col-12">
+            <h3 class="fw-bold">Welcome {{ Auth::user()->name }}</h3>
+            <h6 class="fw-normal mb-4">
+              All systems are running smoothly!
+              <span class="text-primary">3 unread alerts</span>
+            </h6>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-12">
+            <p>{{ $userCount }} users | {{ $packageCount }} packages | {{ $testCount }} tests</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title mb-3">Site Overview</h5>
+                <canvas id="dashboardBar" width="100%" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title mb-3">Data Breakdown</h5>
+                <canvas id="dashboardPie" width="100%" height="200"></canvas>
               </div>
             </div>
           </div>
         </div>
-        {{-- welcome message end --}}
 
-      </div>
-
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
-            Copyright © 2021. Premium 
-            <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> 
-            from BootstrapDash. All rights reserved.
-          </span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-            Hand-crafted & made with 
-            <i class="ti-heart text-danger ml-1"></i>
-          </span>
-        </div>
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
-            Distributed by 
-            <a href="https://www.themewagon.com/" target="_blank">Themewagon</a>
-          </span> 
-        </div>
-      </footer>
-
+      </main>
     </div>
   </div>
 </div>
-
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const labels = @json(['Users', 'Packages', 'Tests']);
+  const data = @json([$userCount, $packageCount, $testCount]);
+
+  const barCtx = document.getElementById('dashboardBar').getContext('2d');
+  const pieCtx = document.getElementById('dashboardPie').getContext('2d');
+
+  new Chart(barCtx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Count',
+        data: data,
+        backgroundColor: [
+          'rgba(13,110,253,0.75)',
+          'rgba(25,135,84,0.75)',
+          'rgba(255,193,7,0.75)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { precision: 0 }
+        }
+      }
+    }
+  });
+
+  new Chart(pieCtx, {
+    type: 'pie',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Distribution',
+        data: data,
+        backgroundColor: [
+          'rgba(13,110,253,0.75)',
+          'rgba(25,135,84,0.75)',
+          'rgba(255,193,7,0.75)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+});
+</script>
+@endpush

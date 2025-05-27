@@ -25,23 +25,31 @@
     <div class="container-fluid container-team py-5">
         <div class="container pb-5">
             <div class="row g-5 align-items-center mb-5">
+                
+                 <div class="container-fluid container-team py-5">
+        <div class="container pb-5">
+            <div class="row g-5 align-items-center mb-5">
                 <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                    <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                    <img class="img-fluid w-100" src="img/team-1.jpg" alt="Dr Rami Al‑Khatib">
                 </div>
                 <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-3">Dr. John Martin</h1>
-                    <p class="mb-1">CEO & Founder</p>
-                    <p class="mb-5">Labsky, New York, USA</p>
+                    <h1 class="display-6 mb-3">Dr Rami Al‑Khatib</h1>
+                    <p class="mb-1">CEO & Consultant Anatomical Pathologist</p>
+                    <p class="mb-5">Alpha Diagnostics, Amman, Jordan</p>
                     <h3 class="mb-3">Biography</h3>
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
+                    <p class="mb-4">Dr Al‑Khatib obtained his MD from the University of Jordan and a PhD in Pathology from the University of Leeds, UK. He is a fellow of the Royal College of Pathologists (FRCPath) with 20 years of subspecialty experience in gastrointestinal and hepatobiliary pathology.</p>
+                    <p class="mb-4">He has authored 35 peer‑reviewed publications and leads the laboratory’s quality management program.</p>
                     <div class="d-flex">
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="https://youtube.com"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">

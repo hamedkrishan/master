@@ -1,16 +1,15 @@
 @extends('welcome')
-
 @section('content')
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #007bff; color: white;">
     <div class="container text-center py-5 mt-4">
-        <h1 class="display-2 mb-3 animated slideInDown">About</h1>
+        <h1 class="display-2 text-white mb-3 animated slideInDown">About</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0" style="background-color: transparent;">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}" style="color: white;">Home</a></li>
                 <li class="breadcrumb-item"><a href="#" style="color: white;">Pages</a></li>
-                <li class="breadcrumb-item" aria-current="page" style="color: white;">About</li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: white;">About</li>
             </ol>
         </nav>
     </div>
@@ -25,7 +24,9 @@
         </div>
         <div class="col-lg-6">
             <h2 class="mb-4 text-primary">Center Lab Medical - Expertise in Accurate Testing</h2>
-            <p class="mb-3" style="font-size: 1.1rem; color: #555;">We offer comprehensive lab services with the latest technologies and the most accurate methods, focusing on precise results and customer satisfaction.</p>
+            <p class="mb-3" style="font-size: 1.1rem; color: #555;">
+                We offer comprehensive lab services with the latest technologies and the most accurate methods, focusing on precise results and customer satisfaction.
+            </p>
             <ul class="list-unstyled">
                 <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Clinical, hormonal, genetic, and immunological tests</li>
                 <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Pre-employment and home testing</li>
@@ -37,6 +38,7 @@
 </div>
 <!-- About Section End -->
 
+<!-- Core Values -->
 <div class="container py-5 wow fadeIn" data-wow-delay="0.4s" style="background-color: #fff; border-bottom: 2px solid #f1f1f1;">
     <h2 class="text-center mb-4 text-secondary">Our Core Values</h2>
     <div class="row text-center">
@@ -54,14 +56,15 @@
         </div>
     </div>
 </div>
-<!-- About End -->
+<!-- Core Values End -->
 
+<!-- Services -->
 <div class="container py-5 wow fadeIn" data-wow-delay="0.6s" style="background-color: #f1f1f1; border-bottom: 2px solid #ddd;">
     <h2 class="text-center mb-4 text-primary">Our Services</h2>
     <div class="row">
         <div class="col-md-6">
             <div class="card mb-4 shadow-lg" style="transition: transform 0.3s ease;">
-                <img src="img/service1.jpg" class="card-img-top" alt="Service Image">
+                <img src="https://i.postimg.cc/RZfSwbr4/Screenshot-2025-05-19-011806.png " class="card-img-top" alt="Clinical Testing">
                 <div class="card-body">
                     <h5 class="card-title">Clinical Testing</h5>
                     <p class="card-text">We provide a wide range of clinical tests for accurate diagnosis and treatment planning.</p>
@@ -70,7 +73,7 @@
         </div>
         <div class="col-md-6">
             <div class="card mb-4 shadow-lg" style="transition: transform 0.3s ease;">
-                <img src="img/service2.jpg" class="card-img-top" alt="Service Image">
+                <img src="https://i.postimg.cc/65tgMjGB/Screenshot-2025-05-19-013726.png " class="card-img-top" alt="Genetic Testing">
                 <div class="card-body">
                     <h5 class="card-title">Genetic Testing</h5>
                     <p class="card-text">Our genetic testing services help in detecting inherited diseases and provide insights into genetic conditions.</p>
@@ -80,38 +83,40 @@
     </div>
 </div>
 
-<!-- Features Start -->
-<div class="container-fluid feature my-5 wow fadeInUp" data-wow-delay="0.1s" style="background-color: #f8f9fa;">
+<!-- Features Highlight Start -->
+<div class="container-fluid feature mt-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="row g-0">
             <div class="col-lg-6 pt-lg-5">
                 <div class="bg-white p-5 mt-lg-5">
-                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.3s">The Best Medical Test & Laboratory Solution</h1>
-                    <p class="mb-4 wow fadeIn" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
+                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.3s">Comprehensive Medical Testing & Digital Reporting</h1>
+                    <p class="mb-4 wow fadeIn" data-wow-delay="0.4s">
+                        Our test menu spans molecular diagnostics, clinical chemistry, hematology, microbiology, histopathology, immunology, and toxicology—all interfaced via HL7 to hospital EMR systems.
+                    </p>
                     <div class="row g-5 pt-2 mb-5">
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                             <div class="icon-box-primary mb-4">
                                 <i class="bi bi-person-plus text-dark"></i>
                             </div>
-                            <h5 class="mb-3">Experience Doctors</h5>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                            <h5 class="mb-3">Consultant Pathologists</h5>
+                            <span>Fellowship‑trained in UK, USA & Germany for subspecialty reporting.</span>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                             <div class="icon-box-primary mb-4">
                                 <i class="bi bi-check-all text-dark"></i>
                             </div>
-                            <h5 class="mb-3">Advanced Microscopy</h5>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                            <h5 class="mb-3">High‑Resolution Microscopy</h5>
+                            <span>Olympus digital scanners with 0.25 µm optical limit enable telepathology.</span>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 wow fadeIn" data-wow-delay="0.5s" href="#">Explore More</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="row h-100 align-items-end">
                     <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
                         <div class="d-flex align-items-center justify-content-center" style="min-height: 300px;">
-                            <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <button type="button" class="btn-play" data-bs-toggle="modal"
+                                    data-src="https://www.youtube.com/embed/DWRcNpR6Kdc " data-bs-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
@@ -138,7 +143,7 @@
                             </div>
                             <div class="experience mb-0 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span class="text-white">Lab Equipments</span>
+                                    <span class="text-white">Lab Equipment</span>
                                     <span class="text-white">90%</span>
                                 </div>
                                 <div class="progress">
@@ -152,18 +157,17 @@
         </div>
     </div>
 </div>
-<!-- Features End -->
+<!-- Features Highlight End -->
 
 <!-- Video Modal Start -->
 <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content rounded-0">
             <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                <h3 class="modal-title" id="exampleModalLabel">Laboratory Overview</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- 16:9 aspect ratio -->
                 <div class="ratio ratio-16x9">
                     <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
                 </div>
@@ -174,74 +178,30 @@
 <!-- Video Modal End -->
 
 <!-- FAQ Section Start -->
-<!-- FAQ Section Start -->
 <div class="container py-5">
     <h2 class="text-center mb-5">Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header">
-                <button class="accordion-button" style="transition: 0.3s;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                    What is the lab's working time?
-                </button>
-            </h2>
-            <div id="faq1" class="accordion-collapse collapse show">
-                <div class="accordion-body">We operate from 8:00 AM to 10:00 PM every day.</div>
+        @foreach([
+            "What is the lab's working time?" => "We operate from 8:00 AM to 10:00 PM every day.",
+            "How do I book a test?" => "You can book a test online or by visiting our lab.",
+            "Do I need to make an appointment for tests?" => "While appointments are recommended, we accept walk-ins as well.",
+            "How long does it take to get results?" => "Results are typically available within 24 to 48 hours depending on the type of test.",
+            "Can I visit any branch for my test?" => "Yes, you can visit any of our branches for the tests. We have multiple locations across the region.",
+            "Do you offer home sample collection?" => "Yes, we offer home sample collection services. You can book it through our website or by calling us."
+        ] as $question => $answer)
+            <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ $loop->index + 1 }}">
+                        {{ $question }}
+                    </button>
+                </h2>
+                <div id="faq{{ $loop->index + 1 }}" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">{{ $answer }}</div>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" style="transition: 0.3s;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                    How do I book a test?
-                </button>
-            </h2>
-            <div id="faq2" class="accordion-collapse collapse">
-                <div class="accordion-body">You can book a test online or by visiting our lab.</div>
-            </div>
-        </div>
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" style="transition: 0.3s;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                    Do I need to make an appointment for tests?
-                </button>
-            </h2>
-            <div id="faq3" class="accordion-collapse collapse">
-                <div class="accordion-body">While appointments are recommended, we accept walk-ins as well.</div>
-            </div>
-        </div>
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" style="transition: 0.3s;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                    How long does it take to get results?
-                </button>
-            </h2>
-            <div id="faq4" class="accordion-collapse collapse">
-                <div class="accordion-body">Results are typically available within 24 to 48 hours depending on the type of test.</div>
-            </div>
-        </div>
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" style="transition: 0.3s;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                    Can I visit any branch for my test?
-                </button>
-            </h2>
-            <div id="faq5" class="accordion-collapse collapse">
-                <div class="accordion-body">Yes, you can visit any of our branches for the tests. We have multiple locations across the region.</div>
-            </div>
-        </div>
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" style="transition: 0.3s;" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                    Do you offer home sample collection?
-                </button>
-            </h2>
-            <div id="faq6" class="accordion-collapse collapse">
-                <div class="accordion-body">Yes, we offer home sample collection services. You can book it through our website or by calling us.</div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
-<!-- FAQ Section End -->
-
 <!-- FAQ Section End -->
 
 @endsection
